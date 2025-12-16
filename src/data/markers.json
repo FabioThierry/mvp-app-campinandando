@@ -1,0 +1,34 @@
+[
+	{
+		"icon": "markers/igreja_icon.png",
+		"title": "Catedral de Nossa Senhora da Conceição",
+		"loc": {
+			"lat": -7.218455,
+			"lon": -35.881235
+		}
+	},
+	{
+		"icon": "markers/blue_icon.png",
+		"title": "Universidade Federal de Campina Grande",
+		"loc": {
+			"lat": -7.2171368,
+			"lon": -35.9097543
+		}
+	},
+	{
+		"icon": "markers/work_icon.png",
+		"title": "Estação Cabo Branco",
+		"loc": {
+			"lat": -7.1309,
+			"lon": -34.8533
+		}
+	},
+	{
+		"icon": "markers/home_icon.png",
+		"title": "Shopping São Miguel",
+		"loc": {
+			"lat": -7.2186512,
+			"lon": -35.8838391
+		}
+	}
+]

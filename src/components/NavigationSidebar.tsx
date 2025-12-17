@@ -17,7 +17,7 @@ export function NavigationSidebar() {
   const location = useLocation();
 
   return (
-    <Sidebar collapsible="icon" variant="sidebar">
+    <Sidebar collapsible="offcanvas" variant="sidebar">
       <SidebarHeader className="border-b border-sidebar-border">
         <SidebarMenu>
           <SidebarMenuItem>

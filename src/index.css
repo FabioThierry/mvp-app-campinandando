@@ -144,6 +144,6 @@
 
   /* Ensure sidebar doesn't cause overflow on mobile */
   [data-sidebar] {
-    @apply md:border-r;
+    @apply md:border-r-0;
   }
 }

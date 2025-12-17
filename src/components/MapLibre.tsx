@@ -25,6 +25,7 @@ export default function MapLibre({ markers }: MapLibreProps) {
     <Map
       initialViewState={initialView}
       mapStyle="https://tiles.openfreemap.org/styles/positron"
+      style={{ borderRadius: "var(--radius-lg)" }}
     >
       {markers?.map((marker, index) => (
         <Marker
@@ -34,20 +35,27 @@ export default function MapLibre({ markers }: MapLibreProps) {
           anchor="bottom"
         >
           <div
-            className="text-xl font-bold"
-            style={{ color: "red", fontSize: "24px" }}
+            className="relative flex flex-col items-center animate-in zoom-in duration-500"
+            style={{ animationDelay: `${index * 100}ms` }}
           >
-            <MapPin />
-          </div>
-          <div
-            className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded shadow-md text-xs whitespace-nowrap z-10"
-            style={{ transform: "translateX(-50%) translateY(-100%)" }}
-          >
-            {marker.title}
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+              <div className="relative bg-primary text-primary-foreground rounded-full p-2 shadow-lg border-2 border-background">
+                <MapPin className="size-5" />
+              </div>
+            </div>
+            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-card text-card-foreground px-3 py-1.5 rounded-md shadow-lg border border-border text-xs font-medium whitespace-nowrap max-w-[200px] truncate backdrop-blur-sm">
+              {marker.title}
+            </div>
           </div>
         </Marker>
       ))}
-      <NavigationControl showCompass={false} showZoom={true} />
+      <NavigationControl
+        showCompass={false}
+        showZoom={true}
+        position="bottom-right"
+        style={{ margin: "12px" }}
+      />
     </Map>
   );
 }

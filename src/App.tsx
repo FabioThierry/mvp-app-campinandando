@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Caminhadas from "./pages/Caminhadas";
 import Home from "./pages/Home";
@@ -8,18 +7,14 @@ import { NavigationSidebar } from "./components/NavigationSidebar";
 import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
 import CaminhadaMapaPage from "./pages/CaminhadaMapa";
-import {
-  SidebarProvider,
-  SidebarInset,
-  SidebarTrigger,
-} from "./components/ui/sidebar";
+import { SidebarProvider, SidebarInset } from "./components/ui/sidebar";
 
 const AppContent = () => {
   return (
     <SidebarProvider>
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex h-screen w-full overflow-hidden bg-background">
         <NavigationSidebar />
-        <SidebarInset className="overflow-y-auto">
+        <SidebarInset className="flex-1 overflow-y-auto">
           <Routes>
             <Route
               path="/"

@@ -12,12 +12,12 @@ export default function MapLibre({ markers }: MapLibreProps) {
       ? {
           longitude: markers[0].loc.lon,
           latitude: markers[0].loc.lat,
-          zoom: 14,
+          zoom: 17,
         }
       : {
           longitude: -35.881235,
           latitude: -7.218455,
-          zoom: 14,
+          zoom: 15,
         };
 
   return (

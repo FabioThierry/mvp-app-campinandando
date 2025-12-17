@@ -12,16 +12,16 @@ export const caminhadas: Caminhadas[] = [
         icon: "markers/blue_icon.png",
         title: "Açude Velho",
         loc: {
-          lat: -7.2399,
-          lon: -35.8883,
+          lat: -7.224589,
+          lon: -35.878767,
         },
       },
       {
         icon: "markers/home_icon.png",
         title: "Parque do Povo",
         loc: {
-          lat: -7.2407,
-          lon: -35.886,
+          lat: -7.223902,
+          lon: -35.887817,
         },
       },
     ],

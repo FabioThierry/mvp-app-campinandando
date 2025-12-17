@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Caminhadas from "./pages/Caminhadas";
 import Home from "./pages/Home";
 import RoteiroDetalhe from "./pages/RoteiroDetalhe";
-// import AppContainer from "./components/AppContainer";
+import AppContainer from "./components/AppContainer";
 import { NavigationSidebar } from "./components/NavigationSidebar";
 import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
@@ -21,9 +21,30 @@ const AppContent = () => {
         <NavigationSidebar />
         <SidebarInset className="overflow-y-auto">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/caminhadas" element={<Caminhadas />} />
-            <Route path="/caminhada/:slug" element={<RoteiroDetalhe />} />
+            <Route
+              path="/"
+              element={
+                <AppContainer>
+                  <Home />
+                </AppContainer>
+              }
+            />
+            <Route
+              path="/caminhadas"
+              element={
+                <AppContainer>
+                  <Caminhadas />
+                </AppContainer>
+              }
+            />
+            <Route
+              path="/caminhada/:slug"
+              element={
+                <AppContainer>
+                  <RoteiroDetalhe />
+                </AppContainer>
+              }
+            />
             <Route path="/mapa" element={<MapaPage />} />
             <Route
               path="/caminhada/:slug/mapa"

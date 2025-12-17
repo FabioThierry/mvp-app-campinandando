@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import RoteiroDetalhe from "./pages/RoteiroDetalhe";
 import AppContainer from "./components/AppContainer";
 import { NavigationSidebar } from "./components/NavigationSidebar";
-import { Header } from "./components/Header";
+// import { Header } from "./components/Header";
 import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
 import CaminhadaMapaPage from "./pages/CaminhadaMapa";
@@ -16,7 +16,7 @@ const AppContent = () => {
       <div className="flex min-h-screen w-full bg-background">
         <NavigationSidebar />
         <SidebarInset className="flex-1 flex flex-col min-w-0">
-          <Header />
+          {/* <Header /> */}
           <main className="flex-1 overflow-y-auto">
             <Routes>
               <Route

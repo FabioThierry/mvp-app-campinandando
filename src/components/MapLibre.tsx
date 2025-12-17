@@ -1,4 +1,11 @@
-import { Map, Marker, NavigationControl } from "@vis.gl/react-maplibre";
+import {
+  Map,
+  Marker,
+  NavigationControl,
+  GeolocateControl,
+  FullscreenControl,
+  ScaleControl,
+} from "@vis.gl/react-maplibre";
 import type { Marker as MarkerType } from "../types.d.ts";
 import { MapPin } from "lucide-react";
 
@@ -50,11 +57,14 @@ export default function MapLibre({ markers }: MapLibreProps) {
         </Marker>
       ))}
       <NavigationControl
-        showCompass={false}
+        showCompass={true}
         showZoom={true}
         position="top-right"
         style={{ margin: "16px" }}
       />
+      <GeolocateControl position="top-right" style={{ margin: "16px" }} />
+      <FullscreenControl position="top-right" style={{ margin: "16px" }} />
+      <ScaleControl />
     </Map>
   );
 }

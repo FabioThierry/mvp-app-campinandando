@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import RoteiroDetalhe from "./pages/RoteiroDetalhe";
 import AppContainer from "./components/AppContainer";
 import { NavigationSidebar } from "./components/NavigationSidebar";
+import { Header } from "./components/Header";
 import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
 import CaminhadaMapaPage from "./pages/CaminhadaMapa";
@@ -11,41 +12,44 @@ import { SidebarProvider, SidebarInset } from "./components/ui/sidebar";
 
 const AppContent = () => {
   return (
-    <SidebarProvider>
-      <div className="flex h-screen w-full overflow-hidden bg-background">
+    <SidebarProvider defaultOpen={false}>
+      <div className="flex min-h-screen w-full bg-background">
         <NavigationSidebar />
-        <SidebarInset className="flex-1 overflow-y-auto">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <AppContainer>
-                  <Home />
-                </AppContainer>
-              }
-            />
-            <Route
-              path="/caminhadas"
-              element={
-                <AppContainer>
-                  <Caminhadas />
-                </AppContainer>
-              }
-            />
-            <Route
-              path="/caminhada/:slug"
-              element={
-                <AppContainer>
-                  <RoteiroDetalhe />
-                </AppContainer>
-              }
-            />
-            <Route path="/mapa" element={<MapaPage />} />
-            <Route
-              path="/caminhada/:slug/mapa"
-              element={<CaminhadaMapaPage />}
-            />
-          </Routes>
+        <SidebarInset className="flex-1 flex flex-col min-w-0">
+          <Header />
+          <main className="flex-1 overflow-y-auto">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <AppContainer>
+                    <Home />
+                  </AppContainer>
+                }
+              />
+              <Route
+                path="/caminhadas"
+                element={
+                  <AppContainer>
+                    <Caminhadas />
+                  </AppContainer>
+                }
+              />
+              <Route
+                path="/caminhada/:slug"
+                element={
+                  <AppContainer>
+                    <RoteiroDetalhe />
+                  </AppContainer>
+                }
+              />
+              <Route path="/mapa" element={<MapaPage />} />
+              <Route
+                path="/caminhada/:slug/mapa"
+                element={<CaminhadaMapaPage />}
+              />
+            </Routes>
+          </main>
         </SidebarInset>
       </div>
     </SidebarProvider>

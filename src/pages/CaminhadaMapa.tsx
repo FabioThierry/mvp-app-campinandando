@@ -1,4 +1,4 @@
-import { useState } from "react";
+"use client";
 import { useParams } from "react-router-dom";
 import MapLibre from "../components/MapLibre";
 import { caminhadas } from "../lib/caminhadas";
@@ -13,16 +13,8 @@ export default function CaminhadaMapaPage() {
   const markers = caminhada?.markers || [];
 
   return (
-    <div
-      className="w-full h-screen flex flex-col bg-background"
-      style={{ height: "100vh", width: "100vw" }}
-    >
-      <div
-        className="grow bg-background"
-        style={{ width: "100%", height: "100%" }}
-      >
-        <MapLibre markers={markers} />
-      </div>
+    <div className="relative w-full h-[calc(100vh-3.5rem)]">
+      <MapLibre markers={markers} />
     </div>
   );
 }

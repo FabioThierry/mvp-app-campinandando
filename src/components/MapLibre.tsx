@@ -7,7 +7,6 @@ type MapLibreProps = {
 };
 
 export default function MapLibre({ markers }: MapLibreProps) {
-  // Use the first marker's location as the initial view, or default if no markers
   const initialView =
     markers && markers.length > 0
       ? {
@@ -25,7 +24,7 @@ export default function MapLibre({ markers }: MapLibreProps) {
     <Map
       initialViewState={initialView}
       mapStyle="https://tiles.openfreemap.org/styles/positron"
-      style={{ borderRadius: "var(--radius-lg)" }}
+      style={{ width: "100%", height: "100%" }}
     >
       {markers?.map((marker, index) => (
         <Marker
@@ -53,8 +52,8 @@ export default function MapLibre({ markers }: MapLibreProps) {
       <NavigationControl
         showCompass={false}
         showZoom={true}
-        position="bottom-right"
-        style={{ margin: "12px" }}
+        position="top-right"
+        style={{ margin: "16px" }}
       />
     </Map>
   );

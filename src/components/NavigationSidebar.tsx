@@ -8,7 +8,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarTrigger,
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Waypoints, Map, Home, Mountain } from "lucide-react";
@@ -18,7 +17,7 @@ export function NavigationSidebar() {
   const location = useLocation();
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" variant="sidebar">
       <SidebarHeader className="border-b border-sidebar-border">
         <SidebarMenu>
           <SidebarMenuItem>
@@ -32,9 +31,6 @@ export function NavigationSidebar() {
                   Campinandando
                 </span>
               </Link>
-              <div className="w-full flex justify-center border-t border-sidebar-border pt-3 group-data-[collapsible=icon]:border-0 group-data-[collapsible=icon]:pt-0">
-                <SidebarTrigger className="hover:bg-sidebar-accent rounded-md" />
-              </div>
             </div>
           </SidebarMenuItem>
         </SidebarMenu>

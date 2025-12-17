@@ -8,22 +8,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-interface Roteiro {
-  titulo: string;
-  descricao: string;
-  slug: string;
-  imagem: string;
-}
-
-export default function RoteiroCard({ roteiro }: { roteiro: Roteiro }) {
+export default function RoteiroCard({ roteiro }: { roteiro: Caminhadas }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/roteiro/${roteiro.slug}`);
+    navigate(`/caminhada/${roteiro.slug}`);
   };
 
   return (
-    <Card className="w-full flex flex-col h-full min-h-[280px]">
+    <Card className="w-full flex flex-col h-full min-h-70 max-w-xs mx-auto">
       {roteiro.imagem && (
         <div className="relative h-32 w-full">
           <img
@@ -35,7 +28,7 @@ export default function RoteiroCard({ roteiro }: { roteiro: Roteiro }) {
       )}
       <CardHeader className="pb-3 grow pt-4">
         <CardTitle className="text-lg sm:text-xl">{roteiro.titulo}</CardTitle>
-        <CardDescription className="text-sm sm:text-base line-clamp-3 flex-grow">
+        <CardDescription className="text-sm sm:text-base line-clamp-3 grow">
           {roteiro.descricao}
         </CardDescription>
       </CardHeader>

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import RoteiroDetalhe from "./pages/RoteiroDetalhe";
 import AppContainer from "./components/AppContainer";
 import { NavigationSidebar } from "./components/NavigationSidebar";
+import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
 import {
   SidebarProvider,
@@ -28,7 +29,7 @@ const AppContent = () => {
               }
             />
             <Route
-              path="/roteiro/:slug"
+              path="/caminhada/:slug"
               element={
                 <AppContainer>
                   <RoteiroDetalhe />

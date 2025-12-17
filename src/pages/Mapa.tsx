@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { Icon } from "@iconify/react";
 import Map from "../components/Map";
+import MapLibre from "../components/MapLibre";
 
 export default function MapaPage() {
   // const [isDark, setIsDark] = useState(false);
@@ -14,7 +15,7 @@ export default function MapaPage() {
         className="grow bg-background"
         style={{ width: "100%", height: "100%" }}
       >
-        <Map isDark={false} />
+        <MapLibre />
       </div>
     </div>
   );

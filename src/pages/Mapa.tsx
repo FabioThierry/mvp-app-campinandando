@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import { Icon } from "@iconify/react";
-import Map from "../components/Map";
 import MapLibre from "../components/MapLibre";
 
 export default function MapaPage() {

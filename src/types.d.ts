@@ -1,11 +1,18 @@
-interface ILoc {
+export interface ILoc {
   lat: number;
   lon: number;
 }
 
-interface Caminhadas {
+export interface Marker {
+  icon: string;
+  title: string;
+  loc: ILoc;
+}
+
+export interface Caminhadas {
   titulo: string;
   descricao: string;
   slug: string;
   imagem: string;
+  markers?: Marker[];
 }

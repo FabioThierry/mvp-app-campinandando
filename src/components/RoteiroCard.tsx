@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
+import type { Caminhadas } from "../types";
 export default function RoteiroCard({ roteiro }: { roteiro: Caminhadas }) {
   const navigate = useNavigate();
 

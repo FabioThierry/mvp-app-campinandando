@@ -12,7 +12,7 @@ import {
   SidebarHeader,
   SidebarFooter,
 } from "@/components/ui/sidebar";
-import { BadgeInfo, Map, Home, Mountain } from "lucide-react";
+import { Waypoints, Map, Home, Mountain } from "lucide-react";
 
 import { caminhadas } from "@/lib/caminhadas";
 
@@ -52,6 +52,19 @@ export function NavigationSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
+                  isActive={location.pathname === "/caminhadas"}
+                >
+                  <Link to="/caminhadas">
+                    <Waypoints />
+                    <span className="group-data-[collapsible=icon]:hidden!">
+                      Caminhadas
+                    </span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
                   isActive={location.pathname === "/mapa"}
                 >
                   <Link to="/mapa">
@@ -62,25 +75,12 @@ export function NavigationSidebar() {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  isActive={location.pathname === "/sobre"}
-                >
-                  <Link to="/sobre">
-                    <BadgeInfo />
-                    <span className="group-data-[collapsible=icon]:hidden!">
-                      Sobre
-                    </span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
 
         <SidebarGroup>
-          <SidebarGroupLabel className="group-data-[collapsible=icon]:!hidden">
+          <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden!">
             Roteiros
           </SidebarGroupLabel>
           <SidebarGroupContent>
@@ -93,9 +93,9 @@ export function NavigationSidebar() {
                       location.pathname === `/caminhada/${caminhada.slug}`
                     }
                   >
-                    <Link to={`/caminhada/${caminhada.slug}`}>
+                    <Link to={`/caminhada/${caminhada.slug}/mapa`}>
                       <Mountain />
-                      <span className="group-data-[collapsible=icon]:!hidden">
+                      <span className="group-data-[collapsible=icon]:hidden!">
                         {caminhada.titulo}
                       </span>
                     </Link>

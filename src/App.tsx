@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Map from "./components/Map";
+import Caminhadas from "./pages/Caminhadas";
 import Home from "./pages/Home";
 import RoteiroDetalhe from "./pages/RoteiroDetalhe";
-import AppContainer from "./components/AppContainer";
+// import AppContainer from "./components/AppContainer";
 import { NavigationSidebar } from "./components/NavigationSidebar";
 import "maplibre-gl/dist/maplibre-gl.css";
 import MapaPage from "./pages/Mapa";
+import CaminhadaMapaPage from "./pages/CaminhadaMapa";
 import {
   SidebarProvider,
   SidebarInset,
@@ -20,23 +21,14 @@ const AppContent = () => {
         <NavigationSidebar />
         <SidebarInset className="overflow-y-auto">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <AppContainer>
-                  <Home />
-                </AppContainer>
-              }
-            />
-            <Route
-              path="/caminhada/:slug"
-              element={
-                <AppContainer>
-                  <RoteiroDetalhe />
-                </AppContainer>
-              }
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/caminhadas" element={<Caminhadas />} />
+            <Route path="/caminhada/:slug" element={<RoteiroDetalhe />} />
             <Route path="/mapa" element={<MapaPage />} />
+            <Route
+              path="/caminhada/:slug/mapa"
+              element={<CaminhadaMapaPage />}
+            />
           </Routes>
         </SidebarInset>
       </div>

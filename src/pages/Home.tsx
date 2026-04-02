@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)] bg-gradient-to-br from-background via-background to-muted/30 px-4">
+    <div className="flex items-center justify-center min-h-[calc(100vh-3.5rem)] bg-linear-to-br from-background via-background to-muted/30 px-4">
       <div className="flex flex-col items-center justify-center space-y-8 sm:space-y-10 max-w-2xl w-full py-8">
         <div className="relative animate-in fade-in zoom-in duration-700">
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl" />

@@ -16,10 +16,10 @@ export default function Home() {
         </div>
 
         <div className="text-center space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance px-4">
-            Bem-vindo ao Campinandando
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground px-4">
+            Bem-vindo ao CampinAAndando
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground text-pretty leading-relaxed max-w-xl px-4">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
             Explore os melhores roteiros de caminhada pela cidade de Campina
             Grande
           </p>
@@ -54,30 +54,48 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 sm:gap-6 w-full max-w-lg mt-4 sm:mt-8 px-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-450">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
-              <Waypoints className="size-5 sm:size-6 text-primary" />
-            </div>
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
-              Roteiros Guiados
-            </span>
-          </div>
-          <div className="flex flex-col items-center gap-2 text-center">
-            <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
-              <Map className="size-5 sm:size-6 text-primary" />
-            </div>
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
-              Mapas Interativos
-            </span>
-          </div>
-          <div className="flex flex-col items-center gap-2 text-center">
-            <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
-              <Mountain className="size-5 sm:size-6 text-primary" />
-            </div>
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
-              Pontos Turísticos
-            </span>
-          </div>
+          <Button
+            variant="ghost"
+            asChild
+            className="flex flex-col items-center gap-2 text-center h-auto py-3 px-2"
+          >
+            <Link to="/caminhadas">
+              <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
+                <Waypoints className="size-5 sm:size-6 text-primary" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">
+                Roteiros Guiados
+              </span>
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            asChild
+            className="flex flex-col items-center gap-2 text-center h-auto py-3 px-2"
+          >
+            <Link to="/mapa">
+              <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
+                <Map className="size-5 sm:size-6 text-primary" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">
+                Mapas Interativos
+              </span>
+            </Link>
+          </Button>
+          <Button
+            variant="ghost"
+            asChild
+            className="flex flex-col items-center gap-2 text-center h-auto py-3 px-2"
+          >
+            <Link to="/caminhadas">
+              <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
+                <Mountain className="size-5 sm:size-6 text-primary" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">
+                Pontos Turísticos
+              </span>
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

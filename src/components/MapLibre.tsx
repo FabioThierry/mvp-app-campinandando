@@ -5,15 +5,32 @@ import {
   GeolocateControl,
   FullscreenControl,
   ScaleControl,
+  Layer,
+  Source,
 } from "@vis.gl/react-maplibre";
 import type { Marker as MarkerType } from "../types.d.ts";
 import { MapPin } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { dataLayer } from "@/lib/map-style.ts";
 
 type MapLibreProps = {
   markers?: MarkerType[];
 };
 
 export default function MapLibre({ markers }: MapLibreProps) {
+  const [allData, setAllData] = useState(null);
+  useEffect(() => {
+    /* global fetch */
+    fetch("public/campina_grande_ufcg.geojson")
+      .then((resp) => resp.json())
+      .then((json) => setAllData(json))
+      .catch((err) => console.error("Could not load data", err)); // eslint-disable-line
+  }, []);
+
+  const data = useMemo(() => {
+    return allData;
+  }, [allData]);
+
   const initialView =
     markers && markers.length > 0
       ? {
@@ -33,6 +50,9 @@ export default function MapLibre({ markers }: MapLibreProps) {
       mapStyle="https://tiles.openfreemap.org/styles/positron"
       style={{ width: "100%", height: "100%" }}
     >
+      <Source type="geojson" data={data}>
+        <Layer {...dataLayer} />
+      </Source>
       {markers?.map((marker, index) => (
         <Marker
           key={`${marker.loc.lat}-${marker.loc.lon}-${index}`}
